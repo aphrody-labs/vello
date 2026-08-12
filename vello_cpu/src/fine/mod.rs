@@ -21,6 +21,10 @@ pub(crate) use crate::fine::common::gradient::radial::SimdRadialKind;
 pub(crate) use crate::fine::common::gradient::sweep::SimdSweepKind;
 use crate::fine::common::image::{FilteredImagePainter, NNImagePainter, PlainNNImagePainter};
 use crate::fine::common::rounded_blurred_rect::BlurredRoundedRectFiller;
+// Exposed for kitesurf's fit-accuracy test only; not part of the vello_cpu API.
+#[cfg(feature = "poly-pnorm")]
+#[doc(hidden)]
+pub use crate::fine::common::rounded_blurred_rect::phi_coefficients;
 use crate::peniko::{BlendMode, ImageQuality};
 use crate::region::Region;
 use crate::util::EncodedImageExt;
